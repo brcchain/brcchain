@@ -59,14 +59,6 @@ cat $HOMEDIR/config/genesis.json | jq -r --arg node_address "$node_address" --ar
 cat $HOMEDIR/config/genesis.json | jq -r --arg current_date "$current_date" '.app_state["claims"]["params"]["duration_of_decay"]="1000000s"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
 cat $HOMEDIR/config/genesis.json | jq -r --arg current_date "$current_date" '.app_state["claims"]["params"]["duration_until_decay"]="100000s"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
 
-# Set oracle params
-#cat $HOMEDIR/config/genesis.json | jq -r --arg node_address "$node_address" '.app_state["oracle"]["params"]["admin"]=$node_address' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
-#cat $HOMEDIR/config/genesis.json | jq  '.app_state["oracle"]["params"]["scriptId"]=111' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
-#cat $HOMEDIR/config/genesis.json | jq  '.app_state["oracle"]["params"]["multiplier"]=1000000' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
-#cat $HOMEDIR/config/genesis.json | jq  '.app_state["oracle"]["coinSymbolList"][0]["id"]=0' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
-#cat $HOMEDIR/config/genesis.json | jq  '.app_state["oracle"]["coinSymbolList"][0]["symbol"]="BTC"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
-#cat $HOMEDIR/config/genesis.json | jq  '.app_state["oracle"]["coinSymbolList"][0]["isDeleted"]=false' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
-
 # disable produce empty block
 if [[ "$OSTYPE" == "darwin"* ]]; then
     sed -i '' 's/127.0.0.1:26657/0.0.0.0:26657/g' $HOMEDIR/config/config.toml
@@ -126,4 +118,4 @@ ethermintd collect-gentxs --home $HOMEDIR
 ethermintd validate-genesis --home $HOMEDIR
 
 #Start the node
-echo ethermintd start --pruning=nothing $TRACE --log_level $LOGLEVEL --json-rpc.api eth,txpool,net,web3 --home $HOMEDIR
+echo ethermintd start --pruning=nothing --log_level $LOGLEVEL --json-rpc.api eth,txpool,net,web3 --home $HOMEDIR
