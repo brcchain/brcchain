@@ -1,7 +1,7 @@
 KEY="alice"
 CHAINID="brc_12123-1"
-MONIKER="local"
-KEYRING="test"
+MONIKER="node1"
+KEYRING="os"
 LOGLEVEL="info"
 HOMEDIR="$HOME/.brc"
 # to trace evm
