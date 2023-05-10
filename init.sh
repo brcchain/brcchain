@@ -4,8 +4,6 @@ MONIKER="node1"
 KEYRING="os"
 LOGLEVEL="info"
 HOMEDIR="$HOME/.brc"
-# to trace evm
-TRACE="--trace"
 
 # validate dependencies are installed
 #command -v jq > /dev/null 2>&1 || { echo >&2 "jq not installed. More info: https://stedolan.github.io/jq/download/"; exit 1; }
@@ -38,10 +36,7 @@ cat $HOMEDIR/config/genesis.json | jq '.app_state["gov"]["voting_params"]["votin
 cat $HOMEDIR/config/genesis.json | jq '.app_state["evm"]["params"]["evm_denom"]="abrc"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
 cat $HOMEDIR/config/genesis.json | jq '.app_state["inflation"]["params"]["mint_denom"]="abrc"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
 cat $HOMEDIR/config/genesis.json | jq '.app_state["mint"]["params"]["mint_denom"]="abrc"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
-
-#cat $HOMEDIR/config/genesis.json | jq '.app_state["evm"]["accounts"][0]["address"]="0x4200000000000000000000000000000000000042"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
-#cat $HOMEDIR/config/genesis.json | jq -r --arg CODE "$CODE" '.app_state["evm"]["accounts"][0]["code"]=$CODE' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
-
+cat $HOMEDIR/config/genesis.json | jq '.app_state["mint"]["params"]["blocks_per_year"]="15778800"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
 
 # Set gas limit in genesis
 cat $HOMEDIR/config/genesis.json | jq '.consensus_params["block"]["max_gas"]="40000000"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
@@ -61,13 +56,11 @@ cat $HOMEDIR/config/genesis.json | jq -r --arg current_date "$current_date" '.ap
 
 # disable produce empty block
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    sed -i '' 's/127.0.0.1:26657/0.0.0.0:26657/g' $HOMEDIR/config/config.toml
     sed -i '' 's/create_empty_blocks = true/create_empty_blocks = false/g' $HOMEDIR/config/config.toml
     sed -i '' '$H;x;1,/enable = false/s/enable = false/enable = true/;1d' $HOMEDIR/config/app.toml
     sed -i '' ' s/swagger = false/swagger = true/g' $HOMEDIR/config/app.toml
     sed -i '' 's/enabled-unsafe-cors = false/enabled-unsafe-cors = true/g' $HOMEDIR/config/app.toml
   else
-    sed -i 's/127.0.0.1:26657/0.0.0.0:26657/g' $HOMEDIR/config/config.toml
     sed -i 's/create_empty_blocks = true/create_empty_blocks = false/g' $HOMEDIR/config/config.toml
     sed -i '$H;x;1,/enable = false/s/enable = false/enable = true/;1d' $HOMEDIR/config/app.toml
     sed -i ' s/swagger = false/swagger = true/g' $HOMEDIR/config/app.toml
