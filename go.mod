@@ -197,6 +197,7 @@ require (
 )
 
 replace (
+	github.com/cosmos/cosmos-sdk v0.46.11 => github.com/benbrcc/cosmos-sdk v0.46.11-brc
 	// use cosmos keyring
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.1.7-0.20210622111912-ef00f8ac3d76
 	// Fix upstream GHSA-h395-qcrw-5vmq vulnerability.
