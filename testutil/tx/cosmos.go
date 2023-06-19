@@ -12,21 +12,21 @@
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Ethermint library. If not, see https://github.com/evmos/ethermint/blob/main/LICENSE
+// along with the Ethermint library. If not, see https://github.com/brcchain/brcchain/blob/main/LICENSE
 package tx
 
 import (
 	"math"
 
 	sdkmath "cosmossdk.io/math"
+	"github.com/brcchain/brcchain/app"
+	evmtypes "github.com/brcchain/brcchain/x/evm/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/tx"
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
 	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
-	"github.com/evmos/ethermint/app"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
 )
 
 var (

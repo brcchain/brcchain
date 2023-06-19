@@ -14,12 +14,12 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/evmos/ethermint/app"
-	"github.com/evmos/ethermint/crypto/ethsecp256k1"
-	evmenc "github.com/evmos/ethermint/encoding"
-	"github.com/evmos/ethermint/indexer"
-	"github.com/evmos/ethermint/tests"
-	"github.com/evmos/ethermint/x/evm/types"
+	"github.com/brcchain/brcchain/app"
+	"github.com/brcchain/brcchain/crypto/ethsecp256k1"
+	evmenc "github.com/brcchain/brcchain/encoding"
+	"github.com/brcchain/brcchain/indexer"
+	"github.com/brcchain/brcchain/tests"
+	"github.com/brcchain/brcchain/x/evm/types"
 )
 
 func TestKVIndexer(t *testing.T) {

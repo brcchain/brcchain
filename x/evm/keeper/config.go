@@ -12,19 +12,19 @@
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Ethermint library. If not, see https://github.com/evmos/ethermint/blob/main/LICENSE
+// along with the Ethermint library. If not, see https://github.com/brcchain/brcchain/blob/main/LICENSE
 package keeper
 
 import (
 	"math/big"
 
 	errorsmod "cosmossdk.io/errors"
+	"github.com/brcchain/brcchain/x/evm/statedb"
+	"github.com/brcchain/brcchain/x/evm/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core"
 	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/evmos/ethermint/x/evm/statedb"
-	"github.com/evmos/ethermint/x/evm/types"
 )
 
 // EVMConfig creates the EVMConfig based on current state

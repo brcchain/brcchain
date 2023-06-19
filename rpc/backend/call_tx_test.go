@@ -11,10 +11,10 @@ import (
 	"github.com/ethereum/go-ethereum/rlp"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/evmos/ethermint/rpc/backend/mocks"
-	rpctypes "github.com/evmos/ethermint/rpc/types"
-	"github.com/evmos/ethermint/tests"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
+	"github.com/brcchain/brcchain/rpc/backend/mocks"
+	rpctypes "github.com/brcchain/brcchain/rpc/types"
+	"github.com/brcchain/brcchain/tests"
+	evmtypes "github.com/brcchain/brcchain/x/evm/types"
 )
 
 func (suite *BackendTestSuite) TestResend() {

@@ -14,10 +14,10 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"github.com/evmos/ethermint/encoding"
-	ethermint "github.com/evmos/ethermint/types"
-	"github.com/evmos/ethermint/x/evm/types"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
+	"github.com/brcchain/brcchain/encoding"
+	ethermint "github.com/brcchain/brcchain/types"
+	"github.com/brcchain/brcchain/x/evm/types"
+	evmtypes "github.com/brcchain/brcchain/x/evm/types"
 )
 
 var _ DynamicFeeEVMKeeper = MockEVMKeeper{}

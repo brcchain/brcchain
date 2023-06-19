@@ -12,7 +12,7 @@
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Ethermint library. If not, see https://github.com/evmos/ethermint/blob/main/LICENSE
+// along with the Ethermint library. If not, see https://github.com/brcchain/brcchain/blob/main/LICENSE
 package app
 
 import (
@@ -116,19 +116,19 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v6/modules/core/keeper"
 
 	// unnamed import of statik for swagger UI support
-	_ "github.com/evmos/ethermint/client/docs/statik"
+	_ "github.com/brcchain/brcchain/client/docs/statik"
 
-	"github.com/evmos/ethermint/app/ante"
-	"github.com/evmos/ethermint/ethereum/eip712"
-	srvflags "github.com/evmos/ethermint/server/flags"
-	ethermint "github.com/evmos/ethermint/types"
-	"github.com/evmos/ethermint/x/evm"
-	evmkeeper "github.com/evmos/ethermint/x/evm/keeper"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
-	"github.com/evmos/ethermint/x/evm/vm/geth"
-	"github.com/evmos/ethermint/x/feemarket"
-	feemarketkeeper "github.com/evmos/ethermint/x/feemarket/keeper"
-	feemarkettypes "github.com/evmos/ethermint/x/feemarket/types"
+	"github.com/brcchain/brcchain/app/ante"
+	"github.com/brcchain/brcchain/ethereum/eip712"
+	srvflags "github.com/brcchain/brcchain/server/flags"
+	ethermint "github.com/brcchain/brcchain/types"
+	"github.com/brcchain/brcchain/x/evm"
+	evmkeeper "github.com/brcchain/brcchain/x/evm/keeper"
+	evmtypes "github.com/brcchain/brcchain/x/evm/types"
+	"github.com/brcchain/brcchain/x/evm/vm/geth"
+	"github.com/brcchain/brcchain/x/feemarket"
+	feemarketkeeper "github.com/brcchain/brcchain/x/feemarket/keeper"
+	feemarkettypes "github.com/brcchain/brcchain/x/feemarket/types"
 
 	// Force-load the tracer engines to trigger registration due to Go-Ethereum v1.10.15 changes
 	_ "github.com/ethereum/go-ethereum/eth/tracers/js"

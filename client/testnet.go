@@ -12,7 +12,7 @@
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Ethermint library. If not, see https://github.com/evmos/ethermint/blob/main/LICENSE
+// along with the Ethermint library. If not, see https://github.com/brcchain/brcchain/blob/main/LICENSE
 package client
 
 // DONTCOVER
@@ -53,13 +53,13 @@ import (
 	mintypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/evmos/ethermint/crypto/hd"
-	"github.com/evmos/ethermint/server/config"
-	srvflags "github.com/evmos/ethermint/server/flags"
-	ethermint "github.com/evmos/ethermint/types"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
+	"github.com/brcchain/brcchain/crypto/hd"
+	"github.com/brcchain/brcchain/server/config"
+	srvflags "github.com/brcchain/brcchain/server/flags"
+	ethermint "github.com/brcchain/brcchain/types"
+	evmtypes "github.com/brcchain/brcchain/x/evm/types"
 
-	"github.com/evmos/ethermint/testutil/network"
+	"github.com/brcchain/brcchain/testutil/network"
 )
 
 var (

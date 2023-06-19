@@ -12,7 +12,7 @@
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Ethermint library. If not, see https://github.com/evmos/ethermint/blob/main/LICENSE
+// along with the Ethermint library. If not, see https://github.com/brcchain/brcchain/blob/main/LICENSE
 package main
 
 import (
@@ -47,16 +47,16 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/crisis"
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
-	"github.com/evmos/ethermint/app"
-	ethermintclient "github.com/evmos/ethermint/client"
-	"github.com/evmos/ethermint/client/debug"
-	"github.com/evmos/ethermint/crypto/hd"
-	"github.com/evmos/ethermint/encoding"
-	"github.com/evmos/ethermint/ethereum/eip712"
-	"github.com/evmos/ethermint/server"
-	servercfg "github.com/evmos/ethermint/server/config"
-	srvflags "github.com/evmos/ethermint/server/flags"
-	ethermint "github.com/evmos/ethermint/types"
+	"github.com/brcchain/brcchain/app"
+	ethermintclient "github.com/brcchain/brcchain/client"
+	"github.com/brcchain/brcchain/client/debug"
+	"github.com/brcchain/brcchain/crypto/hd"
+	"github.com/brcchain/brcchain/encoding"
+	"github.com/brcchain/brcchain/ethereum/eip712"
+	"github.com/brcchain/brcchain/server"
+	servercfg "github.com/brcchain/brcchain/server/config"
+	srvflags "github.com/brcchain/brcchain/server/flags"
+	ethermint "github.com/brcchain/brcchain/types"
 )
 
 const EnvPrefix = "ETHERMINT"

@@ -15,9 +15,9 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/evmos/ethermint/ethereum/eip712"
-	"github.com/evmos/ethermint/testutil"
-	utiltx "github.com/evmos/ethermint/testutil/tx"
+	"github.com/brcchain/brcchain/ethereum/eip712"
+	"github.com/brcchain/brcchain/testutil"
+	utiltx "github.com/brcchain/brcchain/testutil/tx"
 
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
@@ -39,7 +39,7 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/cosmos/cosmos-sdk/x/authz"
 
-	"github.com/evmos/ethermint/crypto/ethsecp256k1"
+	"github.com/brcchain/brcchain/crypto/ethsecp256k1"
 
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
 	vestingtypes "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
@@ -48,13 +48,13 @@ import (
 	govtypesv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 
-	"github.com/evmos/ethermint/app"
-	"github.com/evmos/ethermint/app/ante"
-	"github.com/evmos/ethermint/encoding"
-	"github.com/evmos/ethermint/tests"
-	"github.com/evmos/ethermint/x/evm/statedb"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
-	feemarkettypes "github.com/evmos/ethermint/x/feemarket/types"
+	"github.com/brcchain/brcchain/app"
+	"github.com/brcchain/brcchain/app/ante"
+	"github.com/brcchain/brcchain/encoding"
+	"github.com/brcchain/brcchain/tests"
+	"github.com/brcchain/brcchain/x/evm/statedb"
+	evmtypes "github.com/brcchain/brcchain/x/evm/types"
+	feemarkettypes "github.com/brcchain/brcchain/x/feemarket/types"
 
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )

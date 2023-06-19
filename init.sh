@@ -1,7 +1,7 @@
 KEY="alice"
 CHAINID="brc_12123-1"
 MONIKER="node1"
-KEYRING="os"
+KEYRING="test"
 LOGLEVEL="info"
 HOMEDIR="$HOME/.brc"
 
@@ -13,14 +13,14 @@ rm -rf $HOMEDIR/data/
 rm -rf $HOMEDIR/config/
 
 # Set client config
-ethermintd config keyring-backend $KEYRING --home $HOMEDIR
-ethermintd config chain-id $CHAINID --home $HOMEDIR
+brcd config keyring-backend $KEYRING --home $HOMEDIR
+brcd config chain-id $CHAINID --home $HOMEDIR
 
 # if $KEY exists it should be deleted
-ethermintd keys add $KEY --keyring-backend $KEYRING --home $HOMEDIR
+brcd keys add $KEY --keyring-backend $KEYRING --home $HOMEDIR
 
 # Set moniker and chain-id for cosmos (Moniker can be anything, chain-id must be an integer)
-ethermintd init $MONIKER --chain-id $CHAINID --home $HOMEDIR
+brcd init $MONIKER --chain-id $CHAINID --home $HOMEDIR
 
 cp $HOMEDIR/config/genesis.json $HOMEDIR/config/tmp_genesis.json
 
@@ -42,7 +42,7 @@ cat $HOMEDIR/config/genesis.json | jq '.app_state["mint"]["params"]["blocks_per_
 cat $HOMEDIR/config/genesis.json | jq '.consensus_params["block"]["max_gas"]="40000000"' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
 
 # Set claims start time
-node_address=$(ethermintd keys list --home $HOMEDIR | grep  "address: " | cut -c12-)
+node_address=$(brcd keys list --home $HOMEDIR | grep  "address: " | cut -c12-)
 current_date=$(date -u +"%Y-%m-%dT%TZ")
 cat $HOMEDIR/config/genesis.json | jq -r --arg current_date "$current_date" '.app_state["claims"]["params"]["airdrop_start_time"]=$current_date' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
 
@@ -91,7 +91,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Allocate genesis accounts (cosmos formatted addresses)
-ethermintd add-genesis-account $KEY 1000000000000000000000000000abrc --keyring-backend $KEYRING --home $HOMEDIR
+brcd add-genesis-account $KEY 1000000000000000000000000000abrc --keyring-backend $KEYRING --home $HOMEDIR
 
 # Update total supply with claim values
 validators_supply=$(cat $HOMEDIR/config/genesis.json | jq -r '.app_state["bank"]["supply"][0]["amount"]')
@@ -102,13 +102,13 @@ cat $HOMEDIR/config/genesis.json | jq -r '.app_state["bank"]["supply"][0]["denom
 cat $HOMEDIR/config/genesis.json | jq -r --arg total_supply "$total_supply" '.app_state["bank"]["supply"][0]["amount"]=$total_supply' > $HOMEDIR/config/tmp_genesis.json && mv $HOMEDIR/config/tmp_genesis.json $HOMEDIR/config/genesis.json
 
 # Sign genesis transaction
-ethermintd gentx $KEY 1000brc --keyring-backend $KEYRING --chain-id $CHAINID --home $HOMEDIR
+brcd gentx $KEY 1000000brc --keyring-backend $KEYRING --chain-id $CHAINID --home $HOMEDIR
 
 # Collect genesis tx
-ethermintd collect-gentxs --home $HOMEDIR
+brcd collect-gentxs --home $HOMEDIR
 
 # Run this to ensure everything worked and that the genesis file is setup correctly
-ethermintd validate-genesis --home $HOMEDIR
+brcd validate-genesis --home $HOMEDIR
 
 #Start the node
-echo ethermintd start --pruning=nothing --log_level $LOGLEVEL --json-rpc.api eth,txpool,net,web3 --home $HOMEDIR
+echo brcd start --pruning=nothing --log_level $LOGLEVEL --json-rpc.api eth,txpool,net,web3 --home $HOMEDIR

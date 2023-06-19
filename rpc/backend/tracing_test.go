@@ -13,10 +13,10 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/evmos/ethermint/crypto/ethsecp256k1"
-	"github.com/evmos/ethermint/indexer"
-	"github.com/evmos/ethermint/rpc/backend/mocks"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
+	"github.com/brcchain/brcchain/crypto/ethsecp256k1"
+	"github.com/brcchain/brcchain/indexer"
+	"github.com/brcchain/brcchain/rpc/backend/mocks"
+	evmtypes "github.com/brcchain/brcchain/x/evm/types"
 )
 
 func (suite *BackendTestSuite) TestTraceTransaction() {

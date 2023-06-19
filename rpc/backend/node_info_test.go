@@ -12,9 +12,9 @@ import (
 	tmrpcclient "github.com/tendermint/tendermint/rpc/client"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/evmos/ethermint/crypto/ethsecp256k1"
-	"github.com/evmos/ethermint/rpc/backend/mocks"
-	ethermint "github.com/evmos/ethermint/types"
+	"github.com/brcchain/brcchain/crypto/ethsecp256k1"
+	"github.com/brcchain/brcchain/rpc/backend/mocks"
+	ethermint "github.com/brcchain/brcchain/types"
 )
 
 func (suite *BackendTestSuite) TestRPCMinGasPrice() {

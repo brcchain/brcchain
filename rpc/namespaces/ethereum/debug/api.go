@@ -12,7 +12,7 @@
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Ethermint library. If not, see https://github.com/evmos/ethermint/blob/main/LICENSE
+// along with the Ethermint library. If not, see https://github.com/brcchain/brcchain/blob/main/LICENSE
 package debug
 
 import (
@@ -29,7 +29,7 @@ import (
 
 	"github.com/davecgh/go-spew/spew"
 
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
+	evmtypes "github.com/brcchain/brcchain/x/evm/types"
 
 	stderrors "github.com/pkg/errors"
 
@@ -39,8 +39,8 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/consensus/ethash"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/evmos/ethermint/rpc/backend"
-	rpctypes "github.com/evmos/ethermint/rpc/types"
+	"github.com/brcchain/brcchain/rpc/backend"
+	rpctypes "github.com/brcchain/brcchain/rpc/types"
 	"github.com/tendermint/tendermint/libs/log"
 )
 

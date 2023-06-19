@@ -16,10 +16,10 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/evmos/ethermint/tests"
-	"github.com/evmos/ethermint/x/evm/keeper"
-	"github.com/evmos/ethermint/x/evm/statedb"
-	"github.com/evmos/ethermint/x/evm/types"
+	"github.com/brcchain/brcchain/tests"
+	"github.com/brcchain/brcchain/x/evm/keeper"
+	"github.com/brcchain/brcchain/x/evm/statedb"
+	"github.com/brcchain/brcchain/x/evm/types"
 )
 
 func (suite *KeeperTestSuite) TestGetHashFn() {

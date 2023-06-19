@@ -12,14 +12,14 @@
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Ethermint library. If not, see https://github.com/evmos/ethermint/blob/main/LICENSE
+// along with the Ethermint library. If not, see https://github.com/brcchain/brcchain/blob/main/LICENSE
 package keeper
 
 import (
+	v4 "github.com/brcchain/brcchain/x/evm/migrations/v4"
+	v5 "github.com/brcchain/brcchain/x/evm/migrations/v5"
+	"github.com/brcchain/brcchain/x/evm/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	v4 "github.com/evmos/ethermint/x/evm/migrations/v4"
-	v5 "github.com/evmos/ethermint/x/evm/migrations/v5"
-	"github.com/evmos/ethermint/x/evm/types"
 )
 
 // Migrator is a struct for handling in-place store migrations.
