@@ -3,7 +3,7 @@
 ## download code
 
 ```
-git clone https://github.com/brcchain/brcchain.gitx
+git clone https://github.com/brcchain/brcchain.git
 ```
 
 ## build
