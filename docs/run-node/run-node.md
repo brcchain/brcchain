@@ -30,6 +30,11 @@ find [p2p] and change persistent_peers content
 persistent_peers = "acdcc063a7cec116ac89b062d595381f1a4b46f4@18.219.47.60:26656"
 ```
 
+copy genesis.json
+```
+cp genesis.json ~/.brc/config
+```
+
 ## run node
 
 ```
